@@ -42,6 +42,7 @@ dependencies:
   path_provider: ^2.0.8
   path: ^1.8.0
   share_plus: ^4.0.10
+  google_fonts:
 
 dev_dependencies:
   flutter_test:
