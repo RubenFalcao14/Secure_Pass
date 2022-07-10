@@ -21,7 +21,15 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
 
   Future passwordReset() async{
     try {
-      await FirebaseAuth.instance.sendPasswordResetEmail(email: _email.text.trim());
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: _email.text);
+      showDialog(
+        context: context, 
+        builder: (context) {
+          return const AlertDialog(
+            content : Text('Password reset link sent! Check your email'),
+          );
+        }
+      );
     } on UserNotFoundAuthException {
         await showErrorDialog(
           context,
@@ -38,7 +46,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
           'Please try again',
         );
       }
-
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,7 +93,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
               const SizedBox(height: 10),
 
           MaterialButton(
-            onPressed: passwordReset(),
+            onPressed: passwordReset,
             child: Text('Reset Password'),
             color: Colors.deepPurple[200],
           ),

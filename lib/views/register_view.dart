@@ -35,181 +35,180 @@ class _RegisterViewState extends State<RegisterView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Register'),
-      ),
         backgroundColor: Colors.grey[300],
         body: SafeArea(
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children:[
-              //App icon
-              Icon(
-               Icons.android,
-               size: 100,
-              ),
-              SizedBox(height: 25),
-              
-              //Hello Again
-              Text(
-                'Hello There',
-                style: GoogleFonts.bebasNeue(
-                  fontSize: 52,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children:[
+                //App icon
+                Icon(
+                 Icons.android,
+                 size: 100,
                 ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                'Register below with your details',
-                style: TextStyle( 
-                  fontSize: 20,
-                ),
-              ),
-              SizedBox(height: 50),
-
-              //email textfield
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                    border: Border.all(color: Colors.white),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 20.0),
-                    child: TextField(
-                      controller: _email,
-                      enableSuggestions: false,
-                      autocorrect: false,
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: const InputDecoration(
-                        hintText: 'Enter your email here',
-                        border: InputBorder.none
-                      ),
-                    ),
+                SizedBox(height: 25),
+                
+                //Hello Again
+                Text(
+                  'Hello There',
+                  style: GoogleFonts.bebasNeue(
+                    fontSize: 52,
                   ),
                 ),
-              ),
-              SizedBox(height: 10),
-
-              //Password textfield
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                    border: Border.all(color: Colors.white),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 20.0),
-                    child: TextField(
-                      controller: _password,
-                      obscureText: true,
-                      enableSuggestions: false,
-                      autocorrect: false,
-                      decoration: const InputDecoration(
-                        hintText: 'Enter your password here',
-                        border: InputBorder.none
-                      ),
-                    ),
+                SizedBox(height: 10),
+                Text(
+                  'Register below with your details',
+                  style: TextStyle( 
+                    fontSize: 20,
                   ),
                 ),
-              ),
-              SizedBox(height: 10),
-
-
-          TextButton(
-            onPressed: () async {
-              final email = _email.text;
-              final password = _password.text;
-              try {
-                await AuthService.firebase().createUser(
-                  email: email,
-                  password: password,
-                );
-                AuthService.firebase().sendEmailVerification();
-                Navigator.of(context).pushNamed(verifyEmailRoute);
-              } on WeakPasswordAuthException {
-                await showErrorDialog(
-                  context,
-                  'Weak password',
-                );
-              } on EmailAlreadyInUseAuthException {
-                await showErrorDialog(
-                  context,
-                  'Email is already in use',
-                );
-              } on InvalidEmailAuthException {
-                await showErrorDialog(
-                  context,
-                  'This is an invalid email address',
-                );
-              } on GenericAuthException {
-                await showErrorDialog(
-                  context,
-                  'Failed to register',
-                );
-              }
-            },
-            
-            //Register button
-                child: Padding(
+                SizedBox(height: 50),
+          
+                //email textfield
+                Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: Container(
-                    padding: EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                      color: Colors.deepPurple,
+                      color: Colors.grey[200],
+                      border: Border.all(color: Colors.white),
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Center(
-                      child: const Text(
-                        'Sign up',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20.0),
+                      child: TextField(
+                        controller: _email,
+                        enableSuggestions: false,
+                        autocorrect: false,
+                        keyboardType: TextInputType.emailAddress,
+                        decoration: const InputDecoration(
+                          hintText: 'Enter your email here',
+                          border: InputBorder.none
                         ),
                       ),
                     ),
                   ),
                 ),
-          ),
-          SizedBox(height: 25),
-
+                SizedBox(height: 10),
           
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).pushNamedAndRemoveUntil(
-                loginRoute,
-                (route) => false,
-              );
-            },
-
-            //Already Registered ?
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const[
-                    Text(
-                      'Already registered?',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                //Password textfield
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      border: Border.all(color: Colors.white),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20.0),
+                      child: TextField(
+                        controller: _password,
+                        obscureText: true,
+                        enableSuggestions: false,
+                        autocorrect: false,
+                        decoration: const InputDecoration(
+                          hintText: 'Enter your password here',
+                          border: InputBorder.none
+                        ),
                       ),
                     ),
-                    Text(
-                      ' Login now',
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 10),
+          
+          
+            TextButton(
+              onPressed: () async {
+                final email = _email.text;
+                final password = _password.text;
+                try {
+                  await AuthService.firebase().createUser(
+                    email: email,
+                    password: password,
+                  );
+                  AuthService.firebase().sendEmailVerification();
+                  Navigator.of(context).pushNamed(verifyEmailRoute);
+                } on WeakPasswordAuthException {
+                  await showErrorDialog(
+                    context,
+                    'Weak password',
+                  );
+                } on EmailAlreadyInUseAuthException {
+                  await showErrorDialog(
+                    context,
+                    'Email is already in use',
+                  );
+                } on InvalidEmailAuthException {
+                  await showErrorDialog(
+                    context,
+                    'This is an invalid email address',
+                  );
+                } on GenericAuthException {
+                  await showErrorDialog(
+                    context,
+                    'Failed to register',
+                  );
+                }
+              },
+              
+              //Register button
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    child: Container(
+                      padding: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Colors.deepPurple,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Center(
+                        child: const Text(
+                          'Sign up',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
                       ),
                     ),
+                  ),
+            ),
+            SizedBox(height: 25),
+          
+            
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                  loginRoute,
+                  (route) => false,
+                );
+              },
+          
+              //Already Registered ?
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const[
+                      Text(
+                        'Already registered?',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        ' Login now',
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+          
+            )
                   ],
                 ),
-
-          )
-        ],
-      ),
+          ),
     ),
     ),
     );
