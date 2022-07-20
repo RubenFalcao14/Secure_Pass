@@ -29,6 +29,8 @@ class _PasswordsViewState extends State<PasswordsView> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Your Passwords'),
+        backgroundColor: Colors.deepPurple[200],
+        elevation: 0,
         actions: [
           IconButton(
             onPressed: () {

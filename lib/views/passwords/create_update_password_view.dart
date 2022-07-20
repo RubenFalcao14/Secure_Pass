@@ -93,6 +93,8 @@ class _CreateUpdatePasswordViewState extends State<CreateUpdatePasswordView> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('New Password'),
+        backgroundColor: Colors.deepPurple[200],
+        elevation: 0,
         actions: [
           IconButton(
             onPressed: () async {

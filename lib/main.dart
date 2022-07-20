@@ -9,7 +9,7 @@ import 'package:secure_pass/views/register_view.dart';
 import 'package:secure_pass/views/settings/settings_view.dart';
 import 'package:secure_pass/views/verify_email_view.dart';
 import 'package:flutter/services.dart';
-
+ 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(

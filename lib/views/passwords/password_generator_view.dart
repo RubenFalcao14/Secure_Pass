@@ -34,9 +34,11 @@ class _PasswordGeneratorViewState extends State<PasswordGeneratorView> {
       appBar: AppBar(
         title: const Text("Password Generator"),
         centerTitle: true,
+        backgroundColor: Colors.deepPurple[200],
+        elevation: 0,
       ),
       body: Container(
-        padding: EdgeInsets.all(32),
+        padding: const EdgeInsets.all(32),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,

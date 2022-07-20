@@ -43,6 +43,7 @@ dependencies:
   path: ^1.8.0
   share_plus: ^4.0.10
   google_fonts:
+  flutter_launcher_icons: ^0.9.3
 
 dev_dependencies:
   flutter_test:

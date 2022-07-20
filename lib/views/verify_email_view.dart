@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:secure_pass/constants/routes.dart';
 import 'package:secure_pass/services/auth/auth_service.dart';
 
@@ -13,32 +14,127 @@ class _VerifyEmailViewState extends State<VerifyEmailView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Verify email'),
-      ),
-      body: Column(
-        children: [
-          const Text(
-              "We've sent you an email verification. Please open it to verify your account."),
-          const Text(
-              "If you haven't received a verification email yet, press the button below"),
+      backgroundColor: Colors.grey[300],
+      resizeToAvoidBottomInset: true,
+      body: SafeArea(
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children:[
+                //Verify your Email
+                Text(
+                  'Verify your Email',
+                  style: GoogleFonts.bebasNeue(
+                    fontSize: 52,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Text(
+                    'Check your email and click on the link to verify your email',
+                    textAlign: TextAlign.center,
+                    style: TextStyle( 
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 40),
+
+                //email icon
+                const Icon(
+                 Icons.email,
+                 size: 200,
+                ),
+                const SizedBox(height: 40),
+
+          //Resend email      
           TextButton(
             onPressed: () async {
               await AuthService.firebase().sendEmailVerification();
             },
-            child: const Text('Send email verification'),
+            child: const Center(
+              child: Text(
+                'Resend email',
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
           ),
+          const SizedBox(height: 25),
+          //end of Resend email
+
+          //code for continue
           TextButton(
             onPressed: () async {
-              await AuthService.firebase().logOut();
-              Navigator.of(context).pushNamedAndRemoveUntil(
-                registerRoute,
-                (route) => false,
-              );
+              final user = AuthService.firebase().currentUser;
+              if (user?.isEmailVerified ?? false) {
+                // user's email is verified
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                  passwordsRoute,
+                  (route) => false,
+                );
+              } else {
+                // user's email is NOT verified
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                  verifyEmailRoute,
+                  (route) => false,
+                );
+              }
             },
-            child: const Text('Restart'),
-          )
+            
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: Container(
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Colors.deepPurple,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Center(
+                child: Text(
+                  'Continue',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(height: 25), 
+        //end of continue         
+
+        //Change email
+        TextButton(
+          onPressed: () async {
+            await AuthService.firebase().logOut();
+            Navigator.of(context).pushNamedAndRemoveUntil(
+              registerRoute,
+              (route) => false,
+            );
+          },
+          child: const Center(
+              child: Text(
+                'Change email',
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+        )
+        //end of change email
+
         ],
+      ),
+      ),
+      ),
       ),
     );
   }

@@ -22,25 +22,35 @@ class PasswordsListView extends StatelessWidget {
       itemCount: passwords.length,
       itemBuilder: (context, index) {
         final password = passwords.elementAt(index);
-        return ListTile(
-          onTap: () {
-            onTap(password);
-          },
-          title: Text(
-            password.text,
-            maxLines: 1,
-            softWrap: true,
-            overflow: TextOverflow.ellipsis,
-          ),
-          trailing: IconButton(
-            onPressed: () async {
-              final shouldDelete = await showDeleteDialog(context);
-              if (shouldDelete) {
-                onDeletePassword(password);
-              }
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.deepPurple[200],
+                border: Border.all(color: Colors.white),
+                borderRadius: BorderRadius.circular(12),
+              ),
+          child: ListTile(
+            onTap: () {
+              onTap(password);
             },
-            icon: const Icon(Icons.delete),
+            title: Text(
+              password.text,
+              maxLines: 1,
+              softWrap: true,
+              overflow: TextOverflow.ellipsis,
+            ),
+            trailing: IconButton(
+              onPressed: () async {
+                final shouldDelete = await showDeleteDialog(context);
+                if (shouldDelete) {
+                  onDeletePassword(password);
+                }
+              },
+              icon: const Icon(Icons.delete),
+            ),
           ),
+        ),
         );
       },
     );

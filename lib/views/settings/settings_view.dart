@@ -14,6 +14,8 @@ class _SettingsViewState extends State<SettingsView> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Settings", style: TextStyle(fontSize: 22),),
+        backgroundColor: Colors.deepPurple[200],
+        elevation: 0,
       ),
       body: Container(
         padding: const EdgeInsets.all(10),
@@ -43,6 +45,8 @@ class _SettingsViewState extends State<SettingsView> {
                   )
                 );
               },
+
+              //Reset Password
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const[
@@ -53,6 +57,8 @@ class _SettingsViewState extends State<SettingsView> {
                 Icon(Icons.arrow_forward_ios, color: Colors.grey),
                 ],
               ),
+
+
             )
           ],
         ),
