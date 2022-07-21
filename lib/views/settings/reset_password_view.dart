@@ -25,7 +25,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
       showDialog(
         context: context, 
         builder: (context) {
-          return const AlertDialog(
+          return const SnackBar(
             content : Text('Password reset link sent! Check your email'),
           );
         }

@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:secure_pass/constants/routes.dart';
@@ -38,17 +36,16 @@ class _LoginViewState extends State<LoginView> {
       backgroundColor: Colors.grey[300],
       resizeToAvoidBottomInset: true,
       body: SafeArea(
-        child: Center(
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children:[
                 //App icon
-                Icon(
+                const Icon(
                  Icons.android,
                  size: 100,
                 ),
-                SizedBox(height: 25),
+                const SizedBox(height: 25),
                 
                 //Hello Again
                 Text(
@@ -57,14 +54,14 @@ class _LoginViewState extends State<LoginView> {
                     fontSize: 52,
                   ),
                 ),
-                SizedBox(height: 10),
-                Text(
+                const SizedBox(height: 10),
+                const Text(
                   'Welcome back, you\'ve been missed!',
                   style: TextStyle( 
                     fontSize: 20,
                   ),
                 ),
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
           
                 //email textfield
                 Padding(
@@ -90,7 +87,7 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
           
                 //Password textfield
                 Padding(
@@ -116,7 +113,7 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
           
                 TextButton(
                   onPressed: () async {
@@ -163,13 +160,13 @@ class _LoginViewState extends State<LoginView> {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: Container(
-                      padding: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
                         color: Colors.deepPurple,
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      child: Center(
-                        child: const Text(
+                      child: const Center(
+                        child: Text(
                           'Login',
                           style: TextStyle(
                             color: Colors.white,
@@ -181,7 +178,7 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ),              
                 ),
-                SizedBox(height: 25),
+                const SizedBox(height: 25),
                 
                 TextButton(
                   onPressed: () {
@@ -215,7 +212,6 @@ class _LoginViewState extends State<LoginView> {
               ],
             ),
           ),
-        ),
       ),
     );
   }
