@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:secure_pass/constants/routes.dart';
@@ -54,11 +52,11 @@ class _RegisterViewState extends State<RegisterView> {
               mainAxisAlignment: MainAxisAlignment.center,
               children:[
                 //App icon
-                Icon(
+                const Icon(
                  Icons.android,
                  size: 100,
                 ),
-                SizedBox(height: 25),
+                const SizedBox(height: 25),
                 
                 //Hello Again
                 Text(
@@ -67,14 +65,14 @@ class _RegisterViewState extends State<RegisterView> {
                     fontSize: 52,
                   ),
                 ),
-                SizedBox(height: 10),
-                Text(
+                const SizedBox(height: 10),
+                const Text(
                   'Register below with your details',
                   style: TextStyle( 
                     fontSize: 20,
                   ),
                 ),
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
           
                 //email textfield
                 Padding(
@@ -100,7 +98,7 @@ class _RegisterViewState extends State<RegisterView> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
           
                 //Password textfield
                 Padding(
@@ -126,7 +124,7 @@ class _RegisterViewState extends State<RegisterView> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
 
               //Confirm password textfield
                 Padding(
@@ -152,7 +150,7 @@ class _RegisterViewState extends State<RegisterView> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
           
           
             TextButton(
@@ -202,13 +200,13 @@ class _RegisterViewState extends State<RegisterView> {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: Container(
-                      padding: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
                         color: Colors.deepPurple,
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      child: Center(
-                        child: const Text(
+                      child: const Center(
+                        child: Text(
                           'Sign up',
                           style: TextStyle(
                             color: Colors.white,
@@ -220,7 +218,7 @@ class _RegisterViewState extends State<RegisterView> {
                     ),
                   ),
             ),
-            SizedBox(height: 25),
+            const SizedBox(height: 25),
           
             
             TextButton(

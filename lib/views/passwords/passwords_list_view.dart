@@ -35,7 +35,7 @@ class PasswordsListView extends StatelessWidget {
               onTap(password);
             },
             title: Text(
-              password.text,
+              password.title,
               maxLines: 1,
               softWrap: true,
               overflow: TextOverflow.ellipsis,

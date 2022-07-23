@@ -19,7 +19,10 @@ class FirebaseCloudStorage {
     required String text,
   }) async {
     try {
-      await passwords.doc(documentId).update({textFieldName: text});
+      await passwords.doc(documentId).update({titleFieldName: text});
+      await passwords.doc(documentId).update({emailFieldName: text});
+      await passwords.doc(documentId).update({userpasswordFieldName: text});
+      await passwords.doc(documentId).update({urlFieldName: text});
     } catch (e) {
       throw CouldNotUpdatePasswordException();
     }
@@ -49,13 +52,19 @@ class FirebaseCloudStorage {
   Future<CloudPassword> createNewPassword({required String ownerUserId}) async {
     final document = await passwords.add({
       ownerUserIdFieldName: ownerUserId,
-      textFieldName: '',
+      titleFieldName: '',
+      emailFieldName: '',
+      userpasswordFieldName: '',
+      urlFieldName: '',
     });
     final fetchedPassword = await document.get();
     return CloudPassword(
       documentId: fetchedPassword.id,
       ownerUserId: ownerUserId,
-      text: '',
+      title: '',
+      email: '',
+      userpassword: '',
+      url: '',
     );
   }
 

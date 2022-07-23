@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class EmailView extends StatefulWidget {
@@ -35,11 +34,11 @@ class _EmailViewState extends State<EmailView> {
           const SizedBox(height: 16,),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              minimumSize: Size.fromHeight(50),
-              textStyle: TextStyle(fontSize: 30),
+              minimumSize: const Size.fromHeight(50),
+              textStyle: const TextStyle(fontSize: 30),
               primary: Colors.deepPurple,
             ),
-            child: Text('Send Email'),
+            child: const Text('Send Email'),
             onPressed: () => launchEmail(
               toEmail: controllerTo.text,
               subject: controllerSubject.text,
@@ -58,10 +57,7 @@ class _EmailViewState extends State<EmailView> {
   }) async{
     final url = 
       'mailto:$toEmail?subject=${Uri.encodeFull(subject)}&body=${Uri.encodeFull(message)}';
-
-      // if(await canLaunch(url)) {
-      //   await launch(url);
-      // }
+      
       await canLaunchUrlString(url)
     ? await launchUrlString(url) : snackBar;
   }
@@ -76,7 +72,7 @@ class _EmailViewState extends State<EmailView> {
         children: [
           Text(
             title,
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 8,),
 
@@ -86,9 +82,17 @@ class _EmailViewState extends State<EmailView> {
               border: Border.all(color: Colors.white),
               borderRadius: BorderRadius.circular(12),
             ),
-            child: TextField(
-              controller: controller,
-              maxLines: maxLines,
+            
+            
+            child: Padding(
+              padding: const EdgeInsets.only(left: 20.0),
+              child: TextField(
+                controller: controller,
+                maxLines: maxLines,
+                decoration: const InputDecoration(
+                  border: InputBorder.none,
+                ),
+              ),
             ),
           )
 

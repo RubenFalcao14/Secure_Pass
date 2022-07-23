@@ -53,14 +53,14 @@ class _PasswordGeneratorViewState extends State<PasswordGeneratorView> {
               readOnly: true,
               enableInteractiveSelection: false,
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 suffixIcon: IconButton(
-                  icon: Icon(Icons.copy),
+                  icon: const Icon(Icons.copy),
                   onPressed: () {
                     final data = ClipboardData(text: controller.text);
                     Clipboard.setData(data);
 
-                  final snackBar = SnackBar(
+                  const snackBar = SnackBar(
                     content: Text(
                       'Password Copied',
                       style: TextStyle(fontWeight: FontWeight.bold),

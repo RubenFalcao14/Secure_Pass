@@ -6,15 +6,25 @@ import 'package:flutter/foundation.dart';
 class CloudPassword {
   final String documentId;
   final String ownerUserId;
-  final String text;
+  final String title;
+  final String email;
+  final String userpassword;
+  final String url;
   const CloudPassword({
     required this.documentId,
     required this.ownerUserId,
-    required this.text,
+    required this.title,
+    required this.email,
+    required this.userpassword,
+    required this.url,
   });
 
   CloudPassword.fromSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> snapshot)
       : documentId = snapshot.id,
         ownerUserId = snapshot.data()[ownerUserIdFieldName],
-        text = snapshot.data()[textFieldName] as String;
+        title = snapshot.data()[titleFieldName] as String,
+        email = snapshot.data()[emailFieldName] as String,
+        userpassword = snapshot.data()[userpasswordFieldName] as String,
+        url = snapshot.data()[urlFieldName] as String;
+        
 }

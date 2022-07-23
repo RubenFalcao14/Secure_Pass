@@ -36,7 +36,6 @@ class _DeleteAccountViewState extends State<DeleteAccountView> {
       backgroundColor: Colors.grey[300],
       resizeToAvoidBottomInset: true,
       body: SafeArea(
-          child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children:[
@@ -164,7 +163,6 @@ class _DeleteAccountViewState extends State<DeleteAccountView> {
                 
               ],
             ),
-          ),
       ),
     );
   }
