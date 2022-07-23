@@ -1,8 +1,8 @@
-import 'dart:ffi';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:secure_pass/theme/theme_manager.dart';
+import 'package:secure_pass/enums/menu_action.dart';
+import 'package:secure_pass/services/auth/auth_service.dart';
+import 'package:secure_pass/views/settings/delete_account_view.dart';
+import 'package:secure_pass/views/settings/email_view.dart';
 import 'package:secure_pass/views/settings/reset_password_view.dart';
 
 class SettingsView extends StatefulWidget {
@@ -12,33 +12,10 @@ class SettingsView extends StatefulWidget {
   State<SettingsView> createState() => _SettingsViewState();
 }
 
-ThemeManager _themeManager = ThemeManager();
-
 class _SettingsViewState extends State<SettingsView> {
 
   @override
-  void dispose() {
-    _themeManager.removeListener(themeListener);
-    super.dispose();
-  }
-
-  @override
-  void initState() {
-    _themeManager.addListener(themeListener);
-    super.initState();
-  }
-
-  themeListener(){
-    if(mounted) {
-      setState(() {
-        
-      });
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
-    bool isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       appBar: AppBar(
         title: const Text("Settings", style: TextStyle(fontSize: 22),),
@@ -51,40 +28,15 @@ class _SettingsViewState extends State<SettingsView> {
           children: [
             const SizedBox(height: 40),
 
-            //Dark mode
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("Dark Mode", 
-                  style: const TextStyle(
-                    fontSize: 18, fontWeight: FontWeight.w500, color: Colors.grey,
-                  ).copyWith(
-                    color: isDark?Colors.white:Colors.black,
-                  ),
-                ),
-                Transform.scale(
-                  scale: 0.7,
-                  child: CupertinoSwitch(
-                    value: _themeManager.themeMode == ThemeMode.dark, onChanged: (newValue) {
-                      _themeManager.toogleTheme(newValue);
-                    },
-                  ),
-                ),
-                ],
-              ),
-            //end of dark mode
-
             //Account section
             Row(
-              children: [
-                const Icon(
+              children: const [
+                Icon(
                   Icons.person,
                   color: Colors.black,
                 ),
-                const SizedBox(width: 10),
-                Text("Account", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold).copyWith(
-                    color: isDark?Colors.white:Colors.black,
-                  ),
+                SizedBox(width: 10),
+                Text("Account", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)
                 ),
               ],
             ),
@@ -106,18 +58,37 @@ class _SettingsViewState extends State<SettingsView> {
 
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
+                  Icon(Icons.security, color: Colors.red),
                   Text("Change Password", style: TextStyle(
                     fontSize: 18, fontWeight: FontWeight.w500, color: Colors.grey,
-                  ).copyWith(
-                    color: isDark?Colors.white:Colors.black,
-                  ),
+                  )
                 ),
-                const Icon(Icons.arrow_forward_ios, color: Colors.black),
+                Icon(Icons.arrow_forward_ios, color: Colors.black),
                 ],
               ),
             ),
+            const SizedBox(height: 10),
             //End of change password
+
+            //Log out
+            GestureDetector(
+              onTap: () => AuthService.firebase().logOut(),
+
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Icon(Icons.logout, color: Colors.blue),
+                  Text("Log Out", style: TextStyle(
+                    fontSize: 18, fontWeight: FontWeight.w500, color: Colors.grey,
+                  )
+                ),
+                Icon(Icons.arrow_forward_ios, color: Colors.black),
+                ],
+              ),
+            ),
+            const SizedBox(height: 10),
+            //End of logout
 
             //Delete Account
             GestureDetector(
@@ -126,7 +97,7 @@ class _SettingsViewState extends State<SettingsView> {
                   context, 
                   MaterialPageRoute(
                     builder: (context) {
-                      return const ResetPasswordView();
+                      return const DeleteAccountView();
                     }
                   )
                 );
@@ -134,17 +105,17 @@ class _SettingsViewState extends State<SettingsView> {
 
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
+                  Icon(Icons.delete, color: Colors.purple),
                   Text("Delete Account", style: TextStyle(
                     fontSize: 18, fontWeight: FontWeight.w500, color: Colors.grey,
-                  ).copyWith(
-                    color: isDark?Colors.white:Colors.black,
-                  ),
+                  )
                 ),
-                const Icon(Icons.arrow_forward_ios, color: Colors.black),
+                Icon(Icons.arrow_forward_ios, color: Colors.black),
                 ],
               ),
             ),
+            const SizedBox(height: 10),
             //End of delete account
 
             //Email Us
@@ -154,7 +125,7 @@ class _SettingsViewState extends State<SettingsView> {
                   context, 
                   MaterialPageRoute(
                     builder: (context) {
-                      return const ResetPasswordView();
+                      return const EmailView();
                     }
                   )
                 );
@@ -162,17 +133,17 @@ class _SettingsViewState extends State<SettingsView> {
 
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
+                  Icon(Icons.email, color: Colors.amber),
                   Text("Email Us", style: TextStyle(
                     fontSize: 18, fontWeight: FontWeight.w500, color: Colors.grey,
-                  ).copyWith(
-                    color: isDark?Colors.white:Colors.black,
                   ),
                 ),
-                const Icon(Icons.arrow_forward_ios, color: Colors.black),
+                Icon(Icons.arrow_forward_ios, color: Colors.black),
                 ],
               ),
             ),
+            const SizedBox(height: 10),
             //End of Email Us
             //End of account section
             

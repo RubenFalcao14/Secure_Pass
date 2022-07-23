@@ -44,6 +44,7 @@ dependencies:
   share_plus: ^4.0.10
   google_fonts:
   flutter_launcher_icons: ^0.9.3
+  url_launcher: ^6.1.5
 
 dev_dependencies:
   flutter_test:

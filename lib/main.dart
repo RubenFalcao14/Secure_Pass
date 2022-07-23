@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:secure_pass/constants/routes.dart';
 import 'package:secure_pass/services/auth/auth_service.dart';
-import 'package:secure_pass/theme/theme_constants.dart';
-import 'package:secure_pass/theme/theme_manager.dart';
 import 'package:secure_pass/views/login_view.dart';
 import 'package:secure_pass/views/passwords/create_update_password_view.dart';
 import 'package:secure_pass/views/passwords/password_generator_view.dart';
@@ -12,17 +10,12 @@ import 'package:secure_pass/views/settings/settings_view.dart';
 import 'package:secure_pass/views/verify_email_view.dart';
 import 'package:flutter/services.dart';
  
-ThemeManager _themeManager = ThemeManager();
-
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
     MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: lightTheme,
-      darkTheme: darkTheme,
-      themeMode: _themeManager.themeMode,
       home: const HomePage(),
       routes: {
         loginRoute: (context) => const LoginView(),

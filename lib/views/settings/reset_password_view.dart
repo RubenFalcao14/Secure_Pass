@@ -13,6 +13,15 @@ class ResetPasswordView extends StatefulWidget {
 class _ResetPasswordViewState extends State<ResetPasswordView> {
   final _email = TextEditingController();
 
+  Widget buildButton() {
+    return ElevatedButton(
+      child: const Text('Reset Password'),
+      onPressed: () {
+        passwordReset;
+      },
+    );
+  }
+
   @override
   void dispose() {
     _email.dispose();
@@ -25,7 +34,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
       showDialog(
         context: context, 
         builder: (context) {
-          return const SnackBar(
+          return const AlertDialog(
             content : Text('Password reset link sent! Check your email'),
           );
         }
@@ -51,6 +60,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text('Reset Password'),
         backgroundColor: Colors.deepPurple[200],
         elevation: 0,
       ),
@@ -62,9 +72,13 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
             child: Text(
               "Enter your Email and we will send you a password reset link",
               textAlign: TextAlign.center,
+              style: TextStyle( 
+                fontSize: 20,
+              ),
             ),
+            
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 20),
 
           //email textfield
               Padding(
@@ -91,12 +105,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                 ),
               ),
               const SizedBox(height: 10),
-
-          MaterialButton(
-            onPressed: passwordReset,
-            child: Text('Reset Password'),
-            color: Colors.deepPurple[200],
-          ),
+            buildButton(),
 
         ],
       ),

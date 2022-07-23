@@ -70,7 +70,9 @@ class _VerifyEmailViewState extends State<VerifyEmailView> {
           //code for continue
           TextButton(
             onPressed: () async {
-              final user = AuthService.firebase().currentUser;
+              var user = AuthService.firebase().currentUser;
+              // await user.reload();
+              // user = await AuthService.firebase().currentUser();
               if (user?.isEmailVerified ?? false) {
                 // user's email is verified
                 Navigator.of(context).pushNamedAndRemoveUntil(

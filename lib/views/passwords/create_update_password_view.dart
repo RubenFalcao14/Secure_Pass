@@ -115,12 +115,83 @@ class _CreateUpdatePasswordViewState extends State<CreateUpdatePasswordView> {
           switch (snapshot.connectionState) {
             case ConnectionState.done:
               _setupTextControllerListener();
-              return TextField(
-                controller: _textController,
-                keyboardType: TextInputType.multiline,
-                maxLines: null,
-                decoration: const InputDecoration(
-                  hintText: 'Start typing your password...',
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                child: Column(
+                  children: [
+                    //Title field
+                    Container(
+                      decoration: BoxDecoration(
+                          color: Colors.deepPurple[200],
+                          border: Border.all(color: Colors.white),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      child: TextField(
+                        controller: _textController,
+                        // keyboardType: TextInputType.multiline,
+                        // maxLines: null,
+                        decoration: InputDecoration(
+                          hintText: 'Enter your title here',
+                        ),
+                      ),
+                    ),
+                    //End of title field
+
+                    //Email field
+                    Container(
+                      decoration: BoxDecoration(
+                          color: Colors.deepPurple[200],
+                          border: Border.all(color: Colors.white),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      child: TextField(
+                        controller: _textController,
+                        keyboardType: TextInputType.multiline,
+                        maxLines: null,
+                        decoration: InputDecoration(
+                          hintText: 'Enter your email here',
+                        ),
+                      ),
+                    ),
+                    //End of email field
+
+                    //Password field
+                    Container(
+                      decoration: BoxDecoration(
+                          color: Colors.deepPurple[200],
+                          border: Border.all(color: Colors.white),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      child: TextField(
+                        controller: _textController,
+                        keyboardType: TextInputType.multiline,
+                        maxLines: null,
+                        decoration: InputDecoration(
+                          hintText: 'Enter your password here',
+                        ),
+                      ),
+                    ),
+                    //End of password field
+
+                    //URL field
+                    Container(
+                      decoration: BoxDecoration(
+                          color: Colors.deepPurple[200],
+                          border: Border.all(color: Colors.white),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      child: TextField(
+                        controller: _textController,
+                        keyboardType: TextInputType.multiline,
+                        maxLines: null,
+                        decoration: InputDecoration(
+                          hintText: 'Enter your URL here',
+                        ),
+                      ),
+                    ),
+                    //End of URL field
+                  ],
+                  
                 ),
               );
             default:
