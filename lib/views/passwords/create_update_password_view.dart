@@ -168,7 +168,8 @@ class _CreateUpdatePasswordViewState extends State<CreateUpdatePasswordView> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('New Password'),
-        backgroundColor: Colors.deepPurple[200],
+        centerTitle: true,
+        backgroundColor: Colors.purple[500],
         elevation: 0,
         actions: [
           IconButton(
@@ -192,81 +193,83 @@ class _CreateUpdatePasswordViewState extends State<CreateUpdatePasswordView> {
               _setupTextControllerListener();
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                child: Column(
-                  children: [
-                    //Title field
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(color: Colors.white),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                      child: TextField(
-                        controller: _titleController,
-                        decoration: const InputDecoration(
-                          hintText: 'Enter your title here',
-                          border: OutlineInputBorder(),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 25),
-                    //End of title field
-
-                    //Email field
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(color: Colors.white),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                      child: TextField(
-                        controller: _emailController,
-                        decoration: const InputDecoration(
-                          hintText: 'Enter your email here',
-                          border: OutlineInputBorder(),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      //Title field
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: Colors.white),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        child: TextField(
+                          controller: _titleController,
+                          decoration: const InputDecoration(
+                            hintText: 'Enter your title here',
+                            border: OutlineInputBorder(),
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(height: 25),
-                    //End of email field
-
-                    //Password field
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(color: Colors.white),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                      child: TextField(
-                        controller: _userPasswordController,
-                        decoration: const InputDecoration(
-                          hintText: 'Enter your password here',
-                          border: OutlineInputBorder(),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 25),
-                    //End of password field
-
-                    //URL field
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(color: Colors.white),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                      child: TextField(
-                        controller: _urlController,
-                        decoration: const InputDecoration(
-                          hintText: 'Enter your URL here',
-                          border: OutlineInputBorder(),
+                      const SizedBox(height: 25),
+                      //End of title field
+                
+                      //Email field
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: Colors.white),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        child: TextField(
+                          controller: _emailController,
+                          decoration: const InputDecoration(
+                            hintText: 'Enter your email here',
+                            border: OutlineInputBorder(),
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(height: 25),
-                    //End of URL field
-                  ],
-                  
+                      const SizedBox(height: 25),
+                      //End of email field
+                
+                      //Password field
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: Colors.white),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        child: TextField(
+                          controller: _userPasswordController,
+                          decoration: const InputDecoration(
+                            hintText: 'Enter your password here',
+                            border: OutlineInputBorder(),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 25),
+                      //End of password field
+                
+                      //URL field
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: Colors.white),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        child: TextField(
+                          controller: _urlController,
+                          decoration: const InputDecoration(
+                            hintText: 'Enter your URL here',
+                            border: OutlineInputBorder(),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 25),
+                      //End of URL field
+                    ],
+                    
+                  ),
                 ),
               );
             default:

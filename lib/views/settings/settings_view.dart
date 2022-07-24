@@ -20,7 +20,8 @@ class _SettingsViewState extends State<SettingsView> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Settings", style: TextStyle(fontSize: 22),),
-        backgroundColor: Colors.deepPurple[200],
+        centerTitle: true,
+        backgroundColor: Colors.purple[500],
         elevation: 0,
       ),
       body: Container(

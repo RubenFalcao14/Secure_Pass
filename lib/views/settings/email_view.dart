@@ -19,7 +19,7 @@ class _EmailViewState extends State<EmailView> {
     appBar: AppBar(
       title: const Text("Email us", style: TextStyle(fontSize: 22),),
       centerTitle: true,
-      backgroundColor: Colors.deepPurple[200],
+      backgroundColor: Colors.purple[500],
       elevation: 0,
     ),
     body: SingleChildScrollView(
