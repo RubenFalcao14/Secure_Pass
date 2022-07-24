@@ -16,8 +16,8 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
   Widget buildButton() {
     return ElevatedButton(
       child: const Text('Reset Password'),
-      onPressed: () {
-        passwordReset;
+      onPressed: () async{
+       await passwordReset();
       },
     );
   }

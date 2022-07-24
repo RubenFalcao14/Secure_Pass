@@ -205,7 +205,7 @@ class _CreateUpdatePasswordViewState extends State<CreateUpdatePasswordView> {
                         controller: _titleController,
                         decoration: const InputDecoration(
                           hintText: 'Enter your title here',
-                          border: InputBorder.none,
+                          border: OutlineInputBorder(),
                         ),
                       ),
                     ),
@@ -223,7 +223,7 @@ class _CreateUpdatePasswordViewState extends State<CreateUpdatePasswordView> {
                         controller: _emailController,
                         decoration: const InputDecoration(
                           hintText: 'Enter your email here',
-                          border: InputBorder.none,
+                          border: OutlineInputBorder(),
                         ),
                       ),
                     ),
@@ -241,7 +241,7 @@ class _CreateUpdatePasswordViewState extends State<CreateUpdatePasswordView> {
                         controller: _userPasswordController,
                         decoration: const InputDecoration(
                           hintText: 'Enter your password here',
-                          border: InputBorder.none,
+                          border: OutlineInputBorder(),
                         ),
                       ),
                     ),
@@ -259,7 +259,7 @@ class _CreateUpdatePasswordViewState extends State<CreateUpdatePasswordView> {
                         controller: _urlController,
                         decoration: const InputDecoration(
                           hintText: 'Enter your URL here',
-                          border: InputBorder.none,
+                          border: OutlineInputBorder(),
                         ),
                       ),
                     ),
