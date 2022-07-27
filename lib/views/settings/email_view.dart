@@ -15,6 +15,12 @@ class _EmailViewState extends State<EmailView> {
   final controllerMessage = TextEditingController();
 
   @override
+  void initState() {
+    controllerTo.text = "securepass30@gmail.com";
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) =>Scaffold (
     appBar: AppBar(
       title: const Text("Email us", style: TextStyle(fontSize: 22),),
@@ -89,7 +95,6 @@ class _EmailViewState extends State<EmailView> {
               child: TextField(
                 controller: controller,
                 maxLines: maxLines,
-                enabled: false,
                 decoration: const InputDecoration(
                   border: InputBorder.none,
                 ),

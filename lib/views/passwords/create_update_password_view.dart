@@ -174,7 +174,7 @@ class _CreateUpdatePasswordViewState extends State<CreateUpdatePasswordView> {
         actions: [
           IconButton(
             onPressed: () async {
-              final text = _emailController.text;
+              final text = _titleController.text + _emailController.text + _userPasswordController.text + _urlController.text;
               if (_password == null || text.isEmpty) {
                 await showCannotShareEmptyPasswordDialog(context);
               } else {

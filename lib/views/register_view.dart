@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:secure_pass/constants/routes.dart';
@@ -166,30 +167,12 @@ class _RegisterViewState extends State<RegisterView> {
                   );
                   AuthService.firebase().sendEmailVerification();
                   Navigator.of(context).pushNamed(verifyEmailRoute);
-                } on WeakPasswordAuthException {
-                  await showErrorDialog(
-                    context,
-                    'Weak password',
-                  );
-                } on EmailAlreadyInUseAuthException {
-                  await showErrorDialog(
-                    context,
-                    'Email is already in use',
-                  );
-                } on InvalidEmailAuthException {
-                  await showErrorDialog(
-                    context,
-                    'This is an invalid email address',
-                  );
-                } on PasswordsDoNotMatchAuthException{
-                  await showErrorDialog(
-                    context,
-                    'The passwords do not match',
-                  );
-                } on GenericAuthException {
-                  await showErrorDialog(
-                    context,
-                    'Failed to register',
+                } on FirebaseAuthException catch(e) {
+                  showDialog(context: context, builder: (context){
+                    return AlertDialog(
+                      content: Text(e.message.toString()),
+                    );
+                  }
                   );
                 }
                 }
