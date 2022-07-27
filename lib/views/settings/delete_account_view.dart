@@ -48,10 +48,13 @@ class _DeleteAccountViewState extends State<DeleteAccountView> {
                   ),
                 ),
                 const SizedBox(height: 10),
-                const Text(
-                  'Enter your email and password to delete your account',
-                  style: TextStyle( 
-                    fontSize: 20,
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 23.0),
+                  child: Text(
+                    'Enter your email and password to delete your account',
+                    style: TextStyle( 
+                      fontSize: 20,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 40),

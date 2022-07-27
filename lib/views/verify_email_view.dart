@@ -72,24 +72,6 @@ class _VerifyEmailViewState extends State<VerifyEmailView> {
             onPressed: () {
               Navigator.of(context).pushNamed(loginRoute);
             },
-            // async {
-            //   var user = AuthService.firebase().currentUser;
-            //   // await user?.reload();
-            //   // user = await AuthService.firebase().currentUser();
-            //   if (user?.isEmailVerified ?? false) {
-            //     // user's email is verified
-            //     Navigator.of(context).pushNamedAndRemoveUntil(
-            //       passwordsRoute,
-            //       (route) => false,
-            //     );
-            //   } else {
-            //     // user's email is NOT verified
-            //     Navigator.of(context).pushNamedAndRemoveUntil(
-            //       verifyEmailRoute,
-            //       (route) => false,
-            //     );
-            //   }
-            // },
             
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),

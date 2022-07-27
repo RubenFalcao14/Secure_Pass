@@ -26,7 +26,7 @@ class _EmailViewState extends State<EmailView> {
       padding: const EdgeInsets.all(16),
       child: Column(
         children: [
-          buildTextField(title: 'To',  controller: controllerTo),
+          buildTextField(title: 'To',  controller: controllerTo,),
           const SizedBox(height: 16,),
           buildTextField(title: 'Subject',  controller: controllerSubject),
           const SizedBox(height: 16,),
@@ -89,6 +89,7 @@ class _EmailViewState extends State<EmailView> {
               child: TextField(
                 controller: controller,
                 maxLines: maxLines,
+                enabled: false,
                 decoration: const InputDecoration(
                   border: InputBorder.none,
                 ),

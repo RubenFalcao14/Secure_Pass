@@ -1,7 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:secure_pass/services/auth/auth_exceptions.dart';
-import 'package:secure_pass/utilities/dialogs/error_dialog.dart';
 
 class ResetPasswordView extends StatefulWidget {
   const ResetPasswordView({Key? key}) : super(key: key);
@@ -39,22 +37,14 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
           );
         }
       );
-    } on UserNotFoundAuthException {
-        await showErrorDialog(
-          context,
-          'User not found',
-        );
-    } on InvalidEmailAuthException {
-        await showErrorDialog(
-          context,
-          'This is an invalid email address',
-        );
-      } on GenericAuthException {
-        await showErrorDialog(
-          context,
-          'Please try again',
+    } on FirebaseAuthException catch(e) {
+      showDialog(context: context, builder: (context){
+        return AlertDialog(
+          content: Text(e.message.toString()),
         );
       }
+      );
+    }
   }
   @override
   Widget build(BuildContext context) {

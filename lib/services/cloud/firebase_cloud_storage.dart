@@ -14,19 +14,50 @@ class FirebaseCloudStorage {
     }
   }
 
-  Future<void> updatePassword({
+  Future<void> updatePasswordTitle({
     required String documentId,
-    required String text,
+    required String title,
   }) async {
     try {
-      await passwords.doc(documentId).update({titleFieldName: text});
-      await passwords.doc(documentId).update({emailFieldName: text});
-      await passwords.doc(documentId).update({userpasswordFieldName: text});
-      await passwords.doc(documentId).update({urlFieldName: text});
+      await passwords.doc(documentId).update({titleFieldName: title});
     } catch (e) {
       throw CouldNotUpdatePasswordException();
     }
   }
+
+  Future<void> updatePasswordEmail({
+    required String documentId,
+    required String email,
+  }) async {
+    try {
+      await passwords.doc(documentId).update({emailFieldName: email});
+    } catch (e) {
+      throw CouldNotUpdatePasswordException();
+    }
+  }
+
+  Future<void> updatePasswordUserpassword({
+    required String documentId,
+    required String userpassword,
+  }) async {
+    try {
+      await passwords.doc(documentId).update({userpasswordFieldName: userpassword});
+    } catch (e) {
+      throw CouldNotUpdatePasswordException();
+    }
+  }
+
+  Future<void> updatePasswordUrl({
+    required String documentId,
+    required String url,
+  }) async {
+    try {
+      await passwords.doc(documentId).update({urlFieldName: url});
+    } catch (e) {
+      throw CouldNotUpdatePasswordException();
+    }
+  }
+  
 
   Stream<Iterable<CloudPassword>> allPasswords({required String ownerUserId}) =>
       passwords.snapshots().map((event) => event.docs

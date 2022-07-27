@@ -24,9 +24,7 @@ class _SettingsViewState extends State<SettingsView> {
         backgroundColor: Colors.purple[500],
         elevation: 0,
       ),
-      body: Container(
-        padding: const EdgeInsets.all(10),
-        child: ListView(
+      body: ListView(
           children: [
             const SizedBox(height: 40),
 
@@ -58,27 +56,27 @@ class _SettingsViewState extends State<SettingsView> {
                 );
               },
 
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Container(
                   decoration: BoxDecoration(
                   color: Colors.deepPurple[200],
                   border: Border.all(color: Colors.white),
                   borderRadius: BorderRadius.circular(12),
                 ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      Icon(Icons.security, color: Colors.red),
-                      Text("Change Password", style: TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.w500, color: Colors.grey,
-                      )
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        Icon(Icons.security, color: Colors.red),
+                        Text("Change Password", style: TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.w500, color: Colors.grey,
+                        )
+                      ),
+                      Icon(Icons.arrow_forward_ios, color: Colors.black),
+                      ],
                     ),
-                    Icon(Icons.arrow_forward_ios, color: Colors.black),
-                    ],
                   ),
                 ),
-              ),
             ),
             const SizedBox(height: 20),
             //End of change password
@@ -96,27 +94,27 @@ class _SettingsViewState extends State<SettingsView> {
                   }
               },
 
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Container(
                   decoration: BoxDecoration(
                   color: Colors.deepPurple[200],
                   border: Border.all(color: Colors.white),
                   borderRadius: BorderRadius.circular(12),
                 ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      Icon(Icons.logout, color: Colors.blue),
-                      Text("Log Out", style: TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.w500, color: Colors.grey,
-                      )
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        Icon(Icons.logout, color: Colors.blue),
+                        Text("Log Out", style: TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.w500, color: Colors.grey,
+                        )
+                      ),
+                      Icon(Icons.arrow_forward_ios, color: Colors.black),
+                      ],
                     ),
-                    Icon(Icons.arrow_forward_ios, color: Colors.black),
-                    ],
                   ),
                 ),
-              ),
             ),
             const SizedBox(height: 20),
             //End of logout
@@ -134,27 +132,27 @@ class _SettingsViewState extends State<SettingsView> {
                 );
               },
 
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Container(
                   decoration: BoxDecoration(
                   color: Colors.deepPurple[200],
                   border: Border.all(color: Colors.white),
                   borderRadius: BorderRadius.circular(12),
                 ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      Icon(Icons.delete, color: Colors.purple),
-                      Text("Delete Account", style: TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.w500, color: Colors.grey,
-                      )
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        Icon(Icons.delete, color: Colors.purple),
+                        Text("Delete Account", style: TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.w500, color: Colors.grey,
+                        )
+                      ),
+                      Icon(Icons.arrow_forward_ios, color: Colors.black),
+                      ],
                     ),
-                    Icon(Icons.arrow_forward_ios, color: Colors.black),
-                    ],
                   ),
                 ),
-              ),
             ),
             const SizedBox(height: 20),
             //End of delete account
@@ -172,35 +170,34 @@ class _SettingsViewState extends State<SettingsView> {
                 );
               },
 
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Container(
                   decoration: BoxDecoration(
                   color: Colors.deepPurple[200],
                   border: Border.all(color: Colors.white),
                   borderRadius: BorderRadius.circular(12),
                 ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      Icon(Icons.email, color: Colors.amber),
-                      Text("Email Us", style: TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.w500, color: Colors.grey,
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        Icon(Icons.email, color: Colors.amber),
+                        Text("Email Us", style: TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.w500, color: Colors.grey,
+                        ),
                       ),
+                      Icon(Icons.arrow_forward_ios, color: Colors.black),
+                      ],
                     ),
-                    Icon(Icons.arrow_forward_ios, color: Colors.black),
-                    ],
                   ),
                 ),
               ),
-            ),
             const SizedBox(height: 20),
             //End of Email Us
             //End of account section
             
           ],
         ),
-      ),
     );
   }
 }

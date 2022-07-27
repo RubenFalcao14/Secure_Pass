@@ -37,9 +37,9 @@ class _CreateUpdatePasswordViewState extends State<CreateUpdatePasswordView> {
       return;
     }
     final title = _titleController.text;
-    await _passwordsService.updatePassword(
+    await _passwordsService.updatePasswordTitle(
       documentId: password.documentId,
-      text: title,
+      title: title,
     );
   }
 
@@ -49,9 +49,9 @@ class _CreateUpdatePasswordViewState extends State<CreateUpdatePasswordView> {
       return;
     }
     final email = _emailController.text;
-    await _passwordsService.updatePassword(
+    await _passwordsService.updatePasswordEmail(
       documentId: password.documentId,
-      text: email,
+      email: email,
     );
   }
 
@@ -61,9 +61,9 @@ class _CreateUpdatePasswordViewState extends State<CreateUpdatePasswordView> {
       return;
     }
     final userpassword = _userPasswordController.text;
-    await _passwordsService.updatePassword(
+    await _passwordsService.updatePasswordUserpassword(
       documentId: password.documentId,
-      text: userpassword,
+      userpassword: userpassword,
     );
   }
 
@@ -73,9 +73,9 @@ class _CreateUpdatePasswordViewState extends State<CreateUpdatePasswordView> {
       return;
     }
     final url = _urlController.text;
-    await _passwordsService.updatePassword(
+    await _passwordsService.updatePasswordUrl(
       documentId: password.documentId,
-      text: url,
+      url: url,
     );
   }
 
@@ -127,27 +127,27 @@ class _CreateUpdatePasswordViewState extends State<CreateUpdatePasswordView> {
     final userpassword = _userPasswordController.text;
     final url = _urlController.text;
     if (password != null && title.isNotEmpty) {
-      await _passwordsService.updatePassword(
+      await _passwordsService.updatePasswordTitle(
         documentId: password.documentId,
-        text: title,
+        title: title,
       );
     }
     if (password != null && email.isNotEmpty) {
-      await _passwordsService.updatePassword(
+      await _passwordsService.updatePasswordEmail(
         documentId: password.documentId,
-        text: email,
+        email: email,
       );
     }
     if (password != null && userpassword.isNotEmpty) {
-      await _passwordsService.updatePassword(
+      await _passwordsService.updatePasswordUserpassword(
         documentId: password.documentId,
-        text: userpassword,
+        userpassword: userpassword,
       );
     }
     if (password != null && url.isNotEmpty) {
-      await _passwordsService.updatePassword(
+      await _passwordsService.updatePasswordUrl(
         documentId: password.documentId,
-        text: url,
+        url: url,
       );
     }
   }
