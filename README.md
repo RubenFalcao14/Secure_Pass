@@ -13,31 +13,31 @@ Audy, Reyald, Ruben and Shivam.
 ## Screenshots of the flutter application.
 
 ## Splash Screen
-![Splash screen_](https://github.com/RubenFalcao14/Secure_Pass/assets/79042516/570dcec9-70e9-4297-9e1b-3eb34e9d0341)
+<img src="https://github.com/RubenFalcao14/Secure_Pass/blob/master/Images/Splash%20screen_.jpg" width="250" height="450">
 
 ## Login Screen
-![Log in](https://github.com/RubenFalcao14/Secure_Pass/assets/79042516/dbb2224c-17b6-42fb-b242-33ca97bc5d70)
+<img src="https://github.com/RubenFalcao14/Secure_Pass/blob/master/Images/Log%20in.jpg" width="250" height="450">
 
 ## Register Screen
-![Register view](https://github.com/RubenFalcao14/Secure_Pass/assets/79042516/fccc633d-a23a-41f2-a568-69442ab1a0f0)
+<img src="https://github.com/RubenFalcao14/Secure_Pass/blob/master/Images/Register%20view.jpg" width="250" height="450">
 
 ## Verfy email view
-![Verify Email view](https://github.com/RubenFalcao14/Secure_Pass/assets/79042516/5f8471e1-fffd-412d-b51f-fa84e6d331e9)
+<img src="https://github.com/RubenFalcao14/Secure_Pass/blob/master/Images/Verify%20Email%20view.jpg" width="250" height="450">
 
 ## Password view Screen
-![Password View](https://github.com/RubenFalcao14/Secure_Pass/assets/79042516/bc3a9ba9-12b9-4001-a516-d2612991312a)
+<img src="https://github.com/RubenFalcao14/Secure_Pass/blob/master/Images/Password%20View.jpg" width="250" height="450">
 
 ## Create new password Screen
-![Create new password_](https://github.com/RubenFalcao14/Secure_Pass/assets/79042516/6d8aa0ad-17c6-4d41-83bd-8e13b85b82b6)
+<img src="https://github.com/RubenFalcao14/Secure_Pass/blob/master/Images/Create%20new%20password_.jpg" width="250" height="450">
 
 ## Password Generator Screen
-![Password Generator_](https://github.com/RubenFalcao14/Secure_Pass/assets/79042516/1751266d-3edb-4453-a932-d1db7371843a)
+<img src="https://github.com/RubenFalcao14/Secure_Pass/blob/master/Images/Password%20Generator_.jpg" width="250" height="450">
 
 ## Settings Screen
-![Settings Page_](https://github.com/RubenFalcao14/Secure_Pass/assets/79042516/c05fcb9a-95c2-4a17-9f55-23d5458ce2d9)
+<img src="https://github.com/RubenFalcao14/Secure_Pass/blob/master/Images/Settings%20Page_.jpg" width="250" height="450">
 
 ## Reset password Screen
-![Reset Password_](https://github.com/RubenFalcao14/Secure_Pass/assets/79042516/f0610caa-1318-4430-a464-7afd2c83eb2f)
+<img src="https://github.com/RubenFalcao14/Secure_Pass/blob/master/Images/Reset%20Password_.jpg" width="250" height="450">
 
 ## Email us Screen
-![Email Us](https://github.com/RubenFalcao14/Secure_Pass/assets/79042516/771fbda1-0bb8-44af-b9d2-c4814574fb1f)
+<img src="https://github.com/RubenFalcao14/Secure_Pass/blob/master/Images/Email%20Us.jpg" width="250" height="450">
